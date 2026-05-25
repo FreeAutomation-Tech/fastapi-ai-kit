@@ -11,7 +11,7 @@ from app.services.ai_service import AIProvider
 
 class OpenAIProvider(AIProvider):
 
-    def __init__(self, base_url: str | None = None):
+    def __init__(self, base_url: Optional[str] = None):
         self.base_url = (base_url or "https://api.openai.com").rstrip("/")
         self.api_key = settings.openai_api_key
 
@@ -113,7 +113,7 @@ class OpenAIProvider(AIProvider):
         finally:
             conn.close()
 
-    async def embed(self, model: str, input: str | list[str]) -> dict:
+    async def embed(self, model: str, input: Union[str, List[str]]) -> dict:
         body = json.dumps({
             "model": model,
             "input": input,
