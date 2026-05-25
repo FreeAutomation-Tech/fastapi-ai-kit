@@ -2,6 +2,7 @@ import functools
 import hashlib
 import json
 import time
+from typing import Optional
 from collections import OrderedDict
 
 from app.config import settings
