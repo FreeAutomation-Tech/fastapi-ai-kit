@@ -1,5 +1,5 @@
-from __future__ import annotations
 from pydantic import BaseModel, Field
+from typing import Union, List
 
 
 class Message(BaseModel):
@@ -36,7 +36,7 @@ class ChatResponse(BaseModel):
 
 class EmbeddingRequest(BaseModel):
     model: str
-    input: str | list[str]
+    input: Union[str, List[str]]
 
 
 class EmbeddingResponse(BaseModel):
