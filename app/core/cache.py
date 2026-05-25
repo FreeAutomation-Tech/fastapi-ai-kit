@@ -24,7 +24,7 @@ class InMemoryCache:
         self._store.move_to_end(key)
         return value
 
-    def set(self, key: str, value: object, ttl: int | None = None):
+    def set(self, key: str, value: object, ttl: Optional[int] = None):
         expires = time.time() + (ttl or self.default_ttl)
         self._store[key] = (expires, value)
         self._store.move_to_end(key)
