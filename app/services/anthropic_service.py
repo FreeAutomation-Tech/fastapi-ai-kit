@@ -1,6 +1,6 @@
 import json
 import uuid
-from typing import AsyncGenerator
+from typing import Optional, AsyncGenerator
 
 from app.config import settings
 from app.models.schemas import Message
@@ -139,5 +139,5 @@ class AnthropicProvider(AIProvider):
         finally:
             conn.close()
 
-    async def embed(self, model: str, input: str | list[str]) -> dict:
+    async def embed(self, model: str, input: Union[str, List[str]]) -> dict:
         raise NotImplementedError("Anthropic does not support embeddings")
