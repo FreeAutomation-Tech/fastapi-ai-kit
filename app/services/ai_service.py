@@ -1,6 +1,6 @@
 from __future__ import annotations
 from abc import ABC, abstractmethod
-from typing import AsyncGenerator
+from typing import Optional, AsyncGenerator
 
 from app.models.schemas import Message
 
@@ -28,7 +28,7 @@ class AIProvider(ABC):
         ...
 
     @abstractmethod
-    async def embed(self, model: str, input: str | list[str]) -> dict:
+    async def embed(self, model: str, input: Union[str, List[str]]) -> dict:
         ...
 
 
