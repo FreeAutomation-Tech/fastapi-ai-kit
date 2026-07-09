@@ -316,3 +316,7 @@ Distributed under the **MIT License**. See [LICENSE](LICENSE) for more informati
 If this project helps you, consider giving it a ⭐!
 
 </div>
+---
+*If you find this useful, please consider giving it a star ⭐ — it helps others discover it too!*
+
+*Thank you for your support! 🙏*
