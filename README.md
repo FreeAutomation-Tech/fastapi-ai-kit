@@ -320,5 +320,3 @@ If this project helps you, consider giving it a ⭐!
 *If you find this useful, please consider giving it a star ⭐ — it helps others discover it too!*
 
 *Thank you for your support! 🙏*
-
-[![Buy Me a Coffee](https://img.buymeacoffee.com/button-api/?text=Buy%20me%20a%20coffee&emoji=&slug=FreeAutomationTech&button_colour=FFDD00&font_colour=000000&font=Cookie&outline_colour=000000&coffee_colour=ffffff)](https://www.buymeacoffee.com/FreeAutomationTech)
