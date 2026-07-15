@@ -1,13 +1,15 @@
 [project]
 name = "fastapi-ai-kit"
-version = "0.1.0"
-description = "Production-ready FastAPI template with multi-provider AI integration (OpenAI, Anthropic, Ollama)"
+version = "0.2.0"
+description = "Production-ready FastAPI Agent Backend — multi-provider AI, MCP SSE, agent execution, session memory, tool registry"
 readme = "README.md"
 requires-python = ">=3.9"
 license = { text = "MIT" }
 keywords = [
     "fastapi",
     "ai",
+    "agent",
+    "mcp",
     "openai",
     "anthropic",
     "ollama",
@@ -17,6 +19,9 @@ keywords = [
     "docker",
     "streaming",
     "sse",
+    "agent-backend",
+    "tool-registry",
+    "session-memory",
 ]
 
 [build-system]

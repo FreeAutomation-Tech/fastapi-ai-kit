@@ -41,6 +41,6 @@ jobs:
           from app.main import app;
           schema = app.openapi();
           assert schema['info']['title'] == 'FastAPI AI Kit';
-          assert schema['info']['version'] == '0.1.0';
+          assert schema['info']['version'] == '0.2.0';
           print('OpenAPI schema valid')
           "

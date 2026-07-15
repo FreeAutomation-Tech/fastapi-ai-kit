@@ -7,7 +7,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
 from app.config import settings
-from app.routers import chat, embeddings, health
+from app.routers import chat, embeddings, health, agents, sessions, tools, mcp
 from app.core.rate_limiter import RateLimitMiddleware
 
 logger = logging.getLogger("fastapi-ai-kit")
@@ -15,15 +15,15 @@ logger = logging.getLogger("fastapi-ai-kit")
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    logger.info("Starting FastAPI AI Kit...")
+    logger.info("Starting FastAPI AI Kit (Agent Backend)...")
     yield
     logger.info("Shutting down FastAPI AI Kit...")
 
 
 app = FastAPI(
     title="FastAPI AI Kit",
-    description="Production-ready FastAPI template with multi-provider AI integration",
-    version="0.1.0",
+    description="Production-ready FastAPI Agent Backend with multi-provider AI, MCP SSE, agent execution, session memory, and tool registry",
+    version="0.2.0",
     lifespan=lifespan,
     docs_url="/docs",
     redoc_url="/redoc",
@@ -68,3 +68,7 @@ async def global_exception_handler(request: Request, exc: Exception):
 app.include_router(health.router, prefix="/api/v1")
 app.include_router(chat.router, prefix="/api/v1")
 app.include_router(embeddings.router, prefix="/api/v1")
+app.include_router(agents.router, prefix="/api/v1")
+app.include_router(sessions.router, prefix="/api/v1")
+app.include_router(tools.router, prefix="/api/v1")
+app.include_router(mcp.router, prefix="/api/v1")

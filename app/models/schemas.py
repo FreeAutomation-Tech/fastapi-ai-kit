@@ -1,5 +1,5 @@
 from pydantic import BaseModel, Field
-from typing import Union, List
+from typing import Union, List, Optional
 
 
 class Message(BaseModel):
@@ -59,3 +59,39 @@ class HealthResponse(BaseModel):
     status: str
     version: str
     uptime: float
+
+
+class SessionCreateResponse(BaseModel):
+    session_id: str
+    created_at: float
+    message_count: int = 0
+
+
+class SessionDetail(BaseModel):
+    id: str
+    created_at: float
+    updated_at: float
+    message_count: int
+    meta: dict = {}
+
+
+class AgentExecuteRequest(BaseModel):
+    session_id: str
+    message: str = Field(min_length=1)
+    model: str = "gpt-4o"
+    temperature: float = Field(default=0.7, ge=0, le=2)
+    max_tokens: int = Field(default=2000, ge=1, le=128000)
+
+
+class AgentExecuteResponse(BaseModel):
+    session_id: str
+    response: str
+    tool_calls: list[dict] = []
+    iterations: int = 1
+    status: str = "success"
+
+
+class ToolInfo(BaseModel):
+    name: str
+    description: str
+    parameters: dict

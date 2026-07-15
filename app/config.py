@@ -16,6 +16,11 @@ class Settings(BaseSettings):
     redis_url: str = ""
     log_level: str = "INFO"
     allowed_origins: str = "*"
+    api_key: str = ""
+    default_provider: str = "openai"
+    workspace_dir: str = "."
+    agent_max_iterations: int = 5
+    session_ttl: int = 3600
 
 
 settings = Settings()
