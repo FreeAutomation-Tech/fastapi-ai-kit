@@ -225,6 +225,7 @@ This is part of the **FreeAutomation-Tech** ecosystem:
 
 | Repo | Description |
 |------|-------------|
+| [claude-seo-kit](https://github.com/FreeAutomation-Tech/claude-seo-kit) | Claude SEO Skills + Python engine (audits, schema, sitemap, hreflang, GEO) |
 | [agent-memory-kit](https://github.com/FreeAutomation-Tech/agent-memory-kit) | Memory patterns for AI agents (sliding-window, RAG, episodic) |
 | [agent-security-kit](https://github.com/FreeAutomation-Tech/agent-security-kit) | Security toolkit for AI agents (guardrails, audit, MCP auth) |
 | [agent-skill-kit](https://github.com/FreeAutomation-Tech/agent-skill-kit) | SKILL.md agent skill definitions |
